@@ -11,12 +11,17 @@
             if ($auth -> checkAuth()) {
                 echo 'Olá, voce esta autenticado!.';
             } else {
-                echo 'Olá, voce NÃO esta autenticado!.';
+                header('Location: /login');
             }
             break;
 
         case '/login':
-            $controller = new AuthController();
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                echo 'Fazer autenticação!!!';
+            } else {
+                $controller = new AuthController();
+                // $controller -> render('login');
+            }
             break;
 
         default:
