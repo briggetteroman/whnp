@@ -19,8 +19,17 @@
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo 'Fazer autenticação!!!';
             } else {
-                $controller = new AuthController();
-                // $controller -> render('login');
+                $controller = new ViewController();
+                $controller -> render('login');
+            }
+            break;
+
+            case '/register':
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                echo 'Fazer registro!!!';
+            } else {
+                $controller = new ViewController();
+                $controller -> render('register');
             }
             break;
 
