@@ -17,7 +17,15 @@
 
         case '/login':
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo 'Fazer autenticação!!!';
+                $request = file_get_contents('php://input');
+                // echo $request;
+                $data_obj = json_decode($request);
+
+                // echo $data_obj;
+                $auth = new AuthController();
+                $result = $auth -> login($data_obj -> username, $data_obj -> password);
+
+                echo $result;
             } else {
                 $controller = new ViewController();
                 $controller -> render('login');

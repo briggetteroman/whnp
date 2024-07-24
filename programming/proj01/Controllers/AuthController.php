@@ -5,7 +5,7 @@ class AuthController {
     public $user_id;
 
     public function login($username, $password) {
-        return "Tela de login!";
+        return "Tela de login Resultttt!";
     }
 
     public function register($username, $password) {
