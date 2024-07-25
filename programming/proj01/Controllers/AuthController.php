@@ -5,7 +5,25 @@ class AuthController {
     public $user_id;
 
     public function login($username, $password) {
-        return "Tela de login Resultttt!";
+        $userModel = new User();
+
+        $user = $userModel -> getUserByUsername($username);
+
+        if($user) {
+            if($user['password'] == $password) {
+                $this -> is_auth = true;
+                $this -> username = $user['username'];
+                $this -> user_id = $user['id'];
+
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+
+        echo $user;
     }
 
     public function register($username, $password) {
