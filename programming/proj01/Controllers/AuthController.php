@@ -11,9 +11,9 @@ class AuthController {
 
         if($user) {
             if($user['password'] == $password) {
-                $this -> is_auth = true;
-                $this -> username = $user['username'];
-                $this -> user_id = $user['id'];
+                $_SESSION['is_auth'] = true;
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['user_id'] = $user['id'];
 
                 return true;
             } else {
@@ -31,7 +31,7 @@ class AuthController {
     }
 
     public function checkAuth() {
-        return $this -> is_auth;
+        return $this -> $_SESSION['is_auth'];
     }
 }
 ?>

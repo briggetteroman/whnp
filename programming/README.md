@@ -17,6 +17,7 @@
 * register
 
 ## Possiveis walkthrougth
+Se usar WSL2 
 ```bash
 ip route 
 

@@ -16,6 +16,11 @@ function fazerLogin (){
                 'Accept': 'application/json'
             },
             body: JSON.stringify(data)
+        }).then((data) => {
+            console.log("deu certo!");
+            console.log(data.json());
+        }).catch((error) => {
+            console.log("deu ruim!");
         });
 
     } else {

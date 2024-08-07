@@ -1,4 +1,4 @@
--- SQL Script  for project de Sistema de autenticação
+-- SQL Script  for project de Sistema de autenticação de teste
 
 create database live_crowsec;
 
