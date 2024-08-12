@@ -40,7 +40,20 @@
 
             case '/register':
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                echo 'Fazer registro!!!';
+                $request = file_get_contents('php://input');
+                $data_obj = json_decode($request);
+
+                $auth = new AuthController();
+                $result = $auth -> register($data_obj -> username, $data_obj -> password);
+
+                if ($result) {
+                    header('Content-Type: application/json');
+                    echo json_encode(['success' => true, 'message' => 'Registro realizado com sucesso!']);
+                } else {
+                    header('Content-Type: application/json');
+                    echo json_encode(['success' => false, 'message' => 'Registro invalido!']);
+                }
+
             } else {
                 $controller = new ViewController();
                 $controller -> render('register');

@@ -27,7 +27,11 @@ class AuthController {
     }
 
     public function register($username, $password) {
-        return "Tela de registro!";
+        $userModel = new User();
+
+        $result = $userModel -> registerUser($username, $password);
+
+        return $result;
     }
 
     public function checkAuth() {
