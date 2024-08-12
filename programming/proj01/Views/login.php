@@ -16,6 +16,7 @@
         <div id="form">
             <input name="username" type="text" placeholder="Username" id="username"> <br>
             <input name="password" type="password" placeholder="Password" id="password"> <br>
+            <small>Ainda não se cadastrou? <a href="/register">Registre-se aqui!</a></small><br>
             <button class="btn-form" id="login_btn" type="button" onclick="fazerLogin()">Login</button>
         </div>
     </div>
