@@ -31,7 +31,7 @@ class AuthController {
     }
 
     public function checkAuth() {
-        return $this -> $_SESSION['is_auth'];
+        return $_SESSION['is_auth'];
     }
 }
 ?>

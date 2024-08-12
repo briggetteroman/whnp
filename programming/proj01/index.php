@@ -11,7 +11,7 @@
         case '/':
             $auth = new AuthController();
             if ($auth -> checkAuth()) {
-                echo 'Olá, voce esta autenticado!.';
+                echo "Olá {$_SESSION['username']}, voce esta autenticado!.";
             } else {
                 header('Location: /login');
             }
@@ -27,10 +27,10 @@
 
                 if ($result) {
                     header('Content-Type: application/json');
-                    echo json_encode(['sucess' => true, 'message' => 'Login realizado com sucesso!']);
+                    echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);
                 } else {
                     header('Content-Type: application/json');
-                    echo json_encode(['sucess' => true, 'message' => 'Login ou senha invalido!']);
+                    echo json_encode(['success' => false, 'message' => 'Login ou senha invalido!']);
                 }
             } else {
                 $controller = new ViewController();
