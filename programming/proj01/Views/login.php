@@ -12,7 +12,14 @@
     <h1 class="title">Tela de login!</h1>
 
     <div id="container">
-
+        <div>
+            <!-- Vulnerability XSS -->
+            <?php
+                if($_GET['msg']) {
+                    echo $_GET['msg'];
+                }
+            ?>
+        </div>
         <div id="form">
             <input name="username" type="text" placeholder="Username" id="username"> <br>
             <input name="password" type="password" placeholder="Password" id="password"> <br>

@@ -19,7 +19,7 @@ function fazerRegistro (){
         }).then((data) => data.json()).then((data) => {
             if (data.success){
                 alert(data.message);
-                document.location = "/login?success=true";
+                document.location = "/login?msg=Registrado com sucesso!";
             } else {
                 alert(data.message);
             }

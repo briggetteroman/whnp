@@ -4,7 +4,7 @@ create database live_crowsec;
 
 CREATE TABLE `live_crowsec`.`users` (
     `id` INT NOT NULL AUTO_INCREMENT,
-    `username` VARCHAR(45) NOT NULL,
+    `username` VARCHAR(45) NOT NULL UNIQUE,
     `password` VARCHAR(45) NOT NULL,
     `role` VARCHAR(45) NULL,
     PRIMARY KEY (`id`),
