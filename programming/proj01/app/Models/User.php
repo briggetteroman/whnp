@@ -7,7 +7,7 @@ class User {
     public $connection;
 
     public function __construct(){
-        $this -> connection = new mysqli('172.28.144.1', 'crowsec', 'crowsec123', 'live_crowsec');
+        $this -> connection = new mysqli('mysql', 'crowsec', 'crowsec123', 'live_crowsec');
     }
 
     public function getAll(){
@@ -26,8 +26,12 @@ class User {
         $sql = "SELECT * FROM users where username = '$username'";
         $result = $this -> connection -> query($sql);
 
-        $user = $result -> fetch_assoc();
-        return $user;
+        if ($result -> num_rows > 0) {
+            $user = $result -> fetch_assoc();
+            return $user;
+        } else {
+            return false;
+        }
     }
 
 

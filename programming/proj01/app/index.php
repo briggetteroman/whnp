@@ -3,7 +3,6 @@
     session_start();
     require_once 'autoload.php';
 
-
     // A pior forma de fazer um route,  então qual é uma melhor forma?
     $route = $_SERVER['REQUEST_URI'];
     $route = explode('?', $route)[0];

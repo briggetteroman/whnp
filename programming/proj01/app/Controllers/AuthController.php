@@ -35,7 +35,11 @@ class AuthController {
     }
 
     public function checkAuth() {
-        return $_SESSION['is_auth'];
+        if (isset($_SESSION['is_auth'])) {
+            return $_SESSION['is_auth'];
+        } else {
+            return false;
+        }
     }
 }
 ?>

@@ -1,5 +1,6 @@
 # Projeto 01
-* Sistema de autenticação
+
+* Vulnerável - Sistema de autenticação
 * API REST
 
 
@@ -13,14 +14,30 @@
 ### Models
 
 ### Views
+
 * login
 * register
 
 ## Possiveis walkthrougth
-Se usar WSL2 
+
+### Executar web server local no diretorio fonte
+
+```bash
+php -S <addr>:<port> -t .
+```
+
+### Conexão com MySQL local
+
+Se usar WSL2 com o MySQL
 ```bash
 ip route 
 
 nc <ip-route> 3306 -v -z
 Connection to <ip-route> 3306 port [tcp/mysql] succeeded!
+```
+
+### Executar os serviços em containers
+
+```bash
+sudo docker compose up --build
 ```
